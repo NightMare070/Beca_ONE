@@ -1,5 +1,7 @@
 let numeroSecreto = 0; //Llamada a la función generarNumeroAleatorio()
 let contador = 0;   //Variable que cuenta el número de intentos
+let numeros = [];  //Array que almacena los números aleatorios
+let numeroMaximo = 10;  //Variable que almacena el número máximo
 
 function asignarTextoElemento(elemento, texto){    //Función que se ejecuta al pulsar el botón "Asignar texto"
     let elementoHTML = document.querySelector(elemento);   //Selecciona el primer elemento h1
@@ -30,13 +32,25 @@ function limpiar(){ //Función que se ejecuta al pulsar el botón "Limpiar"
 }
 
 function generarNumeroAleatorio(min, max){  //Función que se ejecuta al pulsar el botón "Generar número aleatorio"
-    return Math.floor(Math.random() * (max - min)) + min;   //Retornar un numero aleatorio entre un rango
+    let numeroGenerado = Math.floor(Math.random()*(max - min)+min);   //Retornar un numero aleatorio entre un rango
+
+    if (numeros.length == max) {  //Si el array de números tiene la misma longitud que el número máximo
+        asignarTextoElemento('p', 'Ya no hay más números disponibles');  //Llamada a la función asignarTextoElemento()
+    }else{
+        if (numeros.includes(numeroGenerado)) { //Si el número generado ya se encuentra en el array
+            return generarNumeroAleatorio(1, numeroMaximo);  //Llamada recursiva a la función generarNumeroAleatorio()
+        } else {  //Si el número generado no se encuentra en el array
+            numeros.push(numeroGenerado);  //Añade el número generado al array
+            console.log(numeros); //Imprime en consola el array de números
+            return numeroGenerado;  //Retorna el número generado
+        }
+    }
 }
 
 function condicionesIniciales(){  //Función que se ejecuta al pulsar el botón "Mensajes iniciales"
     asignarTextoElemento('h1', 'Juego del número secreto'); //Llamada a la función asignarTextoElemento()
-    asignarTextoElemento('p', 'Indica un número del 1 al 10');
-    numeroSecreto = generarNumeroAleatorio(1,10);
+    asignarTextoElemento('p', `Indica un número del 1 al ${numeroMaximo}`); //Llamada a la función asignarTextoElemento()
+    numeroSecreto = generarNumeroAleatorio(1,numeroMaximo);  //Llamada a la función generarNumeroAleatorio()
     console.log(numeroSecreto); //Imprime en consola el número secreto
     contador = 0;
 }

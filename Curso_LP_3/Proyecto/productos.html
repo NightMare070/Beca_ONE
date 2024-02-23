@@ -3,20 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/productos.css">
     <title>Productos</title>
 </head>
 <body>
     <header>
-        <h1><img src="img/logo.png" alt=""></h1>
+        <div class="caja">
+            <h1><img src="img/logo.png" alt="logo"></h1>
 
-        <nav>
-            <ul class="navegacion">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul class="navegacion">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+    <main>
+        <ul class="productos">
+            <li>
+                <h2>Cabello</h2>
+                <img src="img/cabello.jpg" alt="cabello">
+                <p class="descripcion">Con tijera o máquina, a gusto del cliente</p>
+                <p class="precio">$ 10.00</p>
+            </li>
+            <li>
+                <h2>Barba</h2>
+                <img src="img/barba.jpg" alt="barba">
+                <p class="descripcion">Corte y diseño profesional de barba</p>
+                <p class="precio">$ 8.00</p>
+            </li>
+            <li>
+                <h2>Cabello + Barba</h2>
+                <img src="img/cabello+barba.jpg" alt="cabelloBarba">
+                <p class="descripcion">Paquete completo de cabello y barba</p>
+                <p class="precio">$ 15.00</p>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <img src="img/logo-blanco.png" alt="logo-alter">
+        <p class="copyright">&copy; Copyright Barberia Alura - 2024</p>
+    </footer>
 </body>
 </html>

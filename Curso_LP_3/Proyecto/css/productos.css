@@ -1,3 +1,7 @@
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
 header{
     background-color: #BBBBBB;
     padding: 20px 0;
@@ -88,4 +92,26 @@ footer{
     color: #FFFFFF;
     font-size: 13px;
     margin: 20px;
+}
+
+@media screen and (max-width: 480px){
+    h1{
+        text-align: center;
+    }
+
+    nav{
+        position: static;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .caja, .principal, .productos{
+        width: auto;
+    }
+
+    .productos li{
+        display: block;
+        width: 100%;
+        margin: 0 0 20px;
+    }
 }
